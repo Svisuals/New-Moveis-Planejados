@@ -73,6 +73,7 @@
       <label background="1" textalpha="1" borderradius="1" width="180" textcolor="0x000000" height="20" backgroundalpha="1" wordwrap="1" bordercolor="0x000000" borderalpha="1" border="1" backgroundcolor="0xffffff" enabled="1"/>
       <polystyle handcursor="1" mode="0" backgroundalpha="0.25098" bordercolor="0x0000ff" borderalpha="1" backgroundcolor="0x0000ff"/>
       <hotspot tilt="-3.73" pan="-342.61" url="{node8}" distance="13.5548" description="" target="" skinid="ht_node" title="COZINHA/TERREO2" id="Point01"/>
+      <hotspot tilt="-2.98" pan="-182.71" url="{node3}" distance="9.01019" description="" target="172.2/8.4/82.8" skinid="ht_node" title="FACHADA" id="Point02"/>
     </hotspots>
     <media/>
     <transition zoomout="0" zoomafteroutfov="20" type="crossdissolve" softedge="0" zoomspeed="2" zoomoutpause="1" zoomfov="20" zoomin="0" blendcolor="0x000000" enabled="1" blendtime="1" zoomafterinfov="90"/>
