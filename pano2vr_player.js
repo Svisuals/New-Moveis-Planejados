@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
 // Pano2VR 6.1.13/18080 HTML5/CSS3 & WebGL Panorama Player          //
-// License: BKYM.COM                                                //
+// License: SVISUALS                                              //
 // (c) 2021, Garden Gnome Software, http://ggnome.com               //
 //////////////////////////////////////////////////////////////////////
 
