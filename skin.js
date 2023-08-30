@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.13/18080
 // Filename: NEW Planejados.ggsk
-// Generated 2023-08-29T21:08:41
+// Generated 2023-08-29T21:25:53
 
 function pano2vrSkin(player,base) {
 	player.addVariable('Node1', 2, false);
@@ -2498,7 +2498,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._enter_vr.ggCurrentLogicStatePosition != newLogicStatePosition) {
 				me._enter_vr.ggCurrentLogicStatePosition = newLogicStatePosition;
-				me._enter_vr.style[domTransition]='right 0s, top 0s';
+				me._enter_vr.style[domTransition]='right 0s, top 0s, ' + cssPrefix + 'transform 0s';
 				if (me._enter_vr.ggCurrentLogicStatePosition == 0) {
 					me._enter_vr.style.right='3px';
 					me._enter_vr.style.top='148px';
@@ -2506,6 +2506,32 @@ function pano2vrSkin(player,base) {
 				else {
 					me._enter_vr.style.right='3px';
 					me._enter_vr.style.top='175px';
+				}
+			}
+		}
+		me._enter_vr.logicBlock_scaling = function() {
+			var newLogicStateScaling;
+			if (
+				((player.getViewerSize().width <= 1028))
+			)
+			{
+				newLogicStateScaling = 0;
+			}
+			else {
+				newLogicStateScaling = -1;
+			}
+			if (me._enter_vr.ggCurrentLogicStateScaling != newLogicStateScaling) {
+				me._enter_vr.ggCurrentLogicStateScaling = newLogicStateScaling;
+				me._enter_vr.style[domTransition]='right 0s, top 0s, ' + cssPrefix + 'transform 0s';
+				if (me._enter_vr.ggCurrentLogicStateScaling == 0) {
+					me._enter_vr.ggParameter.sx = 0.7;
+					me._enter_vr.ggParameter.sy = 0.7;
+					me._enter_vr.style[domTransform]=parameterToTransform(me._enter_vr.ggParameter);
+				}
+				else {
+					me._enter_vr.ggParameter.sx = 1;
+					me._enter_vr.ggParameter.sy = 1;
+					me._enter_vr.style[domTransform]=parameterToTransform(me._enter_vr.ggParameter);
 				}
 			}
 		}
@@ -2522,7 +2548,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._enter_vr.ggCurrentLogicStateVisible != newLogicStateVisible) {
 				me._enter_vr.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._enter_vr.style[domTransition]='right 0s, top 0s';
+				me._enter_vr.style[domTransition]='right 0s, top 0s, ' + cssPrefix + 'transform 0s';
 				if (me._enter_vr.ggCurrentLogicStateVisible == 0) {
 					me._enter_vr.style.visibility=(Number(me._enter_vr.style.opacity)>0||!me._enter_vr.style.opacity)?'inherit':'hidden';
 					me._enter_vr.ggVisible=true;
@@ -2559,16 +2585,15 @@ function pano2vrSkin(player,base) {
 		el.className='ggskin ggskin_textdiv';
 		el.ggTextDiv=els;
 		el.ggId="tt_enter_vr";
-		el.ggDx=-16;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
 		el.ggVisible=false;
 		el.className="ggskin ggskin_text ";
 		el.ggType='text';
 		hs ='';
 		hs+='height : 20px;';
-		hs+='left : -10000px;';
 		hs+='position : absolute;';
-		hs+='top : 32px;';
+		hs+='right : 1px;';
+		hs+='top : 40px;';
 		hs+='visibility : hidden;';
 		hs+='width : 100px;';
 		hs+='pointer-events:auto;';
@@ -2578,7 +2603,7 @@ function pano2vrSkin(player,base) {
 		hs ='position:absolute;';
 		hs += 'box-sizing: border-box;';
 		hs+='cursor: default;';
-		hs+='left: 0px;';
+		hs+='right: 0px;';
 		hs+='top:  0px;';
 		hs+='width: auto;';
 		hs+='height: auto;';
@@ -2616,16 +2641,14 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._tt_enter_vr.ggCurrentLogicStatePosition != newLogicStatePosition) {
 				me._tt_enter_vr.ggCurrentLogicStatePosition = newLogicStatePosition;
-				me._tt_enter_vr.style[domTransition]='left 0s, top 0s';
+				me._tt_enter_vr.style[domTransition]='right 0s, top 0s';
 				if (me._tt_enter_vr.ggCurrentLogicStatePosition == 0) {
-					this.ggDx = 0;
+					me._tt_enter_vr.style.right='0px';
 					me._tt_enter_vr.style.top='-25px';
-					me._tt_enter_vr.ggUpdatePosition(true);
 				}
 				else {
-					me._tt_enter_vr.ggDx=-16;
-					me._tt_enter_vr.style.top='32px';
-					me._tt_enter_vr.ggUpdatePosition(true);
+					me._tt_enter_vr.style.right='1px';
+					me._tt_enter_vr.style.top='40px';
 				}
 			}
 		}
@@ -2642,7 +2665,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._tt_enter_vr.ggCurrentLogicStateVisible != newLogicStateVisible) {
 				me._tt_enter_vr.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._tt_enter_vr.style[domTransition]='left 0s, top 0s';
+				me._tt_enter_vr.style[domTransition]='right 0s, top 0s';
 				if (me._tt_enter_vr.ggCurrentLogicStateVisible == 0) {
 					me._tt_enter_vr.style.visibility=(Number(me._tt_enter_vr.style.opacity)>0||!me._tt_enter_vr.style.opacity)?'inherit':'hidden';
 					me._tt_enter_vr.ggVisible=true;
@@ -2654,19 +2677,6 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me._tt_enter_vr.ggUpdatePosition=function (useTransition) {
-			if (useTransition==='undefined') {
-				useTransition = false;
-			}
-			if (!useTransition) {
-				this.style[domTransition]='none';
-			}
-			if (this.parentNode) {
-				var pw=this.parentNode.clientWidth;
-				var w=this.offsetWidth + 0;
-					this.style.left=(this.ggDx + pw/2 - w/2) + 'px';
-			}
-			this.style[domTransition]='left 0';
-			this.ggTextDiv.style.left=((98-this.ggTextDiv.offsetWidth)/2) + 'px';
 		}
 		me._enter_vr.appendChild(me._tt_enter_vr);
 		me.divSkin.appendChild(me._enter_vr);
@@ -11653,6 +11663,7 @@ function pano2vrSkin(player,base) {
 	me._button_fullscreen.logicBlock_position();
 	me._button_fullscreen.logicBlock_scaling();
 	me._enter_vr.logicBlock_position();
+	me._enter_vr.logicBlock_scaling();
 	me._whatsapp.logicBlock_position();
 	me._whatsapp.logicBlock_scaling();
 	me._manual.logicBlock_position();
@@ -11687,7 +11698,7 @@ function pano2vrSkin(player,base) {
 	me._tt_rotate_start.logicBlock_position();
 	me._tt_enter_vr.logicBlock_position();
 	me._enter_vr.logicBlock_visible();
-	player.addListener('sizechanged', function(args) { me._logo_design.logicBlock_position();me._logo_design.logicBlock_scaling();me._instagram.logicBlock_position();me._instagram.logicBlock_scaling();me._facebook.logicBlock_position();me._facebook.logicBlock_scaling();me._tik_tok.logicBlock_position();me._tik_tok.logicBlock_scaling();me._youtube.logicBlock_position();me._youtube.logicBlock_scaling();me._local.logicBlock_position();me._local.logicBlock_scaling();me._garantia1.logicBlock_position();me._garantia1.logicBlock_scaling();me._button_auto_rotate.logicBlock_position();me._button_auto_rotate.logicBlock_scaling();me._button_mute.logicBlock_position();me._button_mute.logicBlock_scaling();me._button_fullscreen.logicBlock_position();me._button_fullscreen.logicBlock_scaling();me._enter_vr.logicBlock_position();me._whatsapp.logicBlock_position();me._whatsapp.logicBlock_scaling();me._manual.logicBlock_position();me._manual.logicBlock_scaling();me._menu2.logicBlock_position();me._menu2.logicBlock_scaling();me._indicaes_de_uso.logicBlock_position();me._indicaes_de_uso.logicBlock_scaling();me._pergunta.logicBlock_position();me._pergunta.logicBlock_scaling();me._indicaes_de_uso_amplo.logicBlock_position();me._indicaes_de_uso_amplo.logicBlock_scaling();me._indicaes_de_uso_amplo.logicBlock_angle(); });
+	player.addListener('sizechanged', function(args) { me._logo_design.logicBlock_position();me._logo_design.logicBlock_scaling();me._instagram.logicBlock_position();me._instagram.logicBlock_scaling();me._facebook.logicBlock_position();me._facebook.logicBlock_scaling();me._tik_tok.logicBlock_position();me._tik_tok.logicBlock_scaling();me._youtube.logicBlock_position();me._youtube.logicBlock_scaling();me._local.logicBlock_position();me._local.logicBlock_scaling();me._garantia1.logicBlock_position();me._garantia1.logicBlock_scaling();me._button_auto_rotate.logicBlock_position();me._button_auto_rotate.logicBlock_scaling();me._button_mute.logicBlock_position();me._button_mute.logicBlock_scaling();me._button_fullscreen.logicBlock_position();me._button_fullscreen.logicBlock_scaling();me._enter_vr.logicBlock_position();me._enter_vr.logicBlock_scaling();me._whatsapp.logicBlock_position();me._whatsapp.logicBlock_scaling();me._manual.logicBlock_position();me._manual.logicBlock_scaling();me._menu2.logicBlock_position();me._menu2.logicBlock_scaling();me._indicaes_de_uso.logicBlock_position();me._indicaes_de_uso.logicBlock_scaling();me._pergunta.logicBlock_position();me._pergunta.logicBlock_scaling();me._indicaes_de_uso_amplo.logicBlock_position();me._indicaes_de_uso_amplo.logicBlock_scaling();me._indicaes_de_uso_amplo.logicBlock_angle(); });
 	player.addListener('fullscreenenter', function(args) { me._button_image_normalscreen.logicBlock_visible();me._button_image_fullscreen0.logicBlock_visible();me._tt_fullscreen.logicBlock_text(); });
 	player.addListener('fullscreenexit', function(args) { me._button_image_normalscreen.logicBlock_visible();me._button_image_fullscreen0.logicBlock_visible();me._tt_fullscreen.logicBlock_text(); });
 	player.addListener('changenode', function(args) { me._stop_rotate_image.logicBlock_visible();me._start_rotate_image0.logicBlock_visible();me._tt_rotate_start.logicBlock_text();me._unmute.logicBlock_visible();me._video_screentint_file.logicBlock_visible();me._video_popup_file.logicBlock_visible();me._popup_video_file.logicBlock_visible();me._video_popup_controls_file.logicBlock_visible();me._video_popup_close_file.logicBlock_visible();me._screentint_info.logicBlock_visible();me._information.logicBlock_visible();me._screentint_image.logicBlock_visible();me._image_popup.logicBlock_visible();me._popup_image.logicBlock_visible();me._image_popup_close.logicBlock_visible(); });
